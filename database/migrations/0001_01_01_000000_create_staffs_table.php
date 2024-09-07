@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->enum('pekerjaan', ['admin', 'kurir', 'staff_gudan'])->default('admin');
+            $table->string('nomor_staff');
             $table->string('nomor_telpon');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
