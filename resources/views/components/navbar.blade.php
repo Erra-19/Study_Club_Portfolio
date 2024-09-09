@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0">
-    <a href="index.html" class="navbar-brand bg-primary d-flex align-items-center px-4 px-lg-5">
+    <a href="/" class="navbar-brand bg-primary d-flex align-items-center px-4 px-lg-5">
         <h2 class="mb-2 text-white">{{ $brand ?? "Tugas Study Club" }}</h2>
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -14,10 +14,16 @@
                     <a href="/register" class="dropdown-item">Register</a>
                 </div>
             </div>
-            <a href="index.html" class="nav-item nav-link active">Home</a>
-            <a href="about.html" class="nav-item nav-link">About</a>
-            <a href="service.html" class="nav-item nav-link">Services</a>
+            <a href="/" class="nav-item nav-link">Home</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-item nav-link">Services</a>
+                <div class="dropdown-menu fade-up m-0">
+                    <a href="/EasySend" class="dropdown-item">EasySend</a>
+                    <a href="/TrackIt" class="dropdown-item">TrackIt</a>
+                </div>
+            </div>
             
+            <a href="/about" class="nav-item nav-link">About</a>
         </div>
     </div>
 </nav>

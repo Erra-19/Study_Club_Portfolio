@@ -5,10 +5,10 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 Route::get('/index', function () {
-    return view('index');
+    return view('welcome');
 });
 Route::get('/login', function () {
     return view('login');
@@ -19,3 +19,7 @@ Route::get('/register', function () {
     return view('register');
 });
 Route::post('/register', [RegisterController::class, 'register']);
+
+Route::get('/EasySend', function () {
+    return view('EasySend');
+});

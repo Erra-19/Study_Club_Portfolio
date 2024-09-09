@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('kustomers', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('nama_pengirim');
             $table->string('email');
             $table->string('nomor_telpon_pengirim');
+            $table->string('nama_penerima');
             $table->string('nomor_telpon_penerima');
             $table->timestamps();
         });

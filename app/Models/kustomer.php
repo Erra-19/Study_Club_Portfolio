@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class kustomer extends Model
 {
     protected $fillable = [
-        'nama',
+        'nama_pengirim',
         'email',
         'nomor_telpon_pengirim',
+        'nama_penerima',
         'nomor_telpon_penerima',
     ];
 

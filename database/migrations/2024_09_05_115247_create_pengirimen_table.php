@@ -14,15 +14,19 @@ return new class extends Migration
         Schema::create('pengirimen', function (Blueprint $table) {
             $table->id();
             $table->string('nomor_resi');
+            $table->unsignedBigInteger('id_alamat');
             $table->unsignedBigInteger('id_staff');
             $table->unsignedBigInteger('id_kustomer');
-            $table->unsignedBigInteger('id_kendaraan');
-            $table->decimal('berat_barang', 10, 2);
-            $table->unsignedBigInteger('id_jenis_barang');
-            $table->tinyInteger('mudah_pecah')->length(1);
+            $table->unsignedBigInteger('id_barang');
+            $table->unsignedBigInteger('id_kendaraan');                                  
             $table->unsignedBigInteger('id_status');
             $table->timestamps();
 
+            $table->foreign('id_alamat')
+                ->references('id')
+                ->on('alamats')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->foreign('id_staff')
                 ->references('id')
                 ->on('staffs')
@@ -33,14 +37,14 @@ return new class extends Migration
                 ->on('kustomers')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+            $table->foreign('id_barang')
+                ->references('id')
+                ->on('barangs')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->foreign('id_kendaraan')
                 ->references('id')
                 ->on('kendaraans')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-            $table->foreign('id_jenis_barang')
-                ->references('id')
-                ->on('jenis_barangs')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->foreign('id_status')
