@@ -1,69 +1,9 @@
 <x-layout title="Register New Staff">
-    <x-navbar brand="Logistic"></x-navbar>
+    @include('components.navbar_admin')
 
 
     <!-- Contact Start -->
-    <div class="container-fluid overflow-hidden py-5 px-lg-0">
-        <div class="container contact-page py-5 px-lg-0">
-            <div class="row g-5 mx-lg-0">
-                <div class="col-md-6 contact-form wow fadeIn" data-wow-delay="0.1s">
-                    <h6 class="text-secondary text-uppercase">Login</h6>
-                    <h1 class="mb-4">Only For Staff!</h1>
-                    <p class="mb-4">If you are a customer, please visit <a href="/EasySend">EasySend</a> for pickup orders, or <a href="/TrackIt">TrackIt</a> for tracking your deliveries.</p>
-                    <div class="bg-light p-4">
 
-                        <form action="{{ route('login') }}" method="post">
-                            @csrf
-                            @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $eror )
-                                        <li>{{ $eror }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                                
-                            @endif
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        @error('email') <small>{{ $message }}</small> @enderror
-                                        <input type="email" class="form-control " id="email" placeholder="Your Email" value="{{ old('email') }}" name="email">
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        @error('email') <small>{{ $message }}</small> @enderror
-                                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
-                                        <span class="password-toggle">
-                                            <i class="fas fa-eye" id="toggle-password"></i>
-                                        </span>
-                                        <label for="password">Password</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <span>
-                                            <label for="role">Role</label>
-                                            <select class="form-controll" name="job">
-                                            <option value="admin">Admin</option>
-                                            <option value="kurir">Kurir</option>
-                                            <option value="staff">Staff Gudang</option>
-                                        </select>
-                                    </span>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Login</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>                
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- Contact End -->
 
 

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('staffs', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->enum('pekerjaan', ['admin', 'kurir', 'staff_gudan'])->default('admin');
+            $table->enum('pekerjaan', ['admin', 'kurir', 'staff_gudang'])->default('admin');
             $table->string('nomor_staff');
             $table->string('nomor_telpon');
             $table->string('email')->unique();

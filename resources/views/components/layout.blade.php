@@ -27,6 +27,7 @@
     
     <link rel="stylesheet" href="css\bootstrap.min.css">
     <link rel="stylesheet" href="css\style1.css">
+    <link rel="stylesheet" href="{{ asset('css/style_admin.css') }}">
 </head>
 <body>
     {{ $slot }}
